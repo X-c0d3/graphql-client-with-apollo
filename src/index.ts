@@ -11,29 +11,29 @@ const client = new ApolloClient({
 });
 
 // ############################## query ##############################################
-// client.query({
-//     query: gql`
-//       query {
-//         workspaceAll {
-//             uuid
-//             version
-//             apps {
-//                 instanceId
-//                 appId
-//                 title
-//                 name
-//                 bounds {
-//                     x
-//                     y
-//                     width
-//                     height
-//                 }
-//             }
-//         }
-//       }
-//     `,
-// }).then(data => console.log(JSON.stringify(data, undefined, 2)))
-//     .catch(error => console.error(error));
+client.query({
+    query: gql`
+      query {
+        workspaceAll {
+            uuid
+            version
+            apps {
+                instanceId
+                appId
+                title
+                name
+                bounds {
+                    x
+                    y
+                    width
+                    height
+                }
+            }
+        }
+      }
+    `,
+}).then(data => console.log(JSON.stringify(data, undefined, 2)))
+    .catch(error => console.error(error));
 
 // ############################# query ###############################################
 client.query({
